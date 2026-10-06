@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <rect x="4" y="10" width="60" height="60" rx="30" fill="#FFFFFF"/>
+  <path d="M22 28H46L24 52H48" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="28" r="3" fill="#000000"/>
+  <text x="80" y="49" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="700" letter-spacing="-0.04em" fill="#FFFFFF">ZIROX</text>
+  <text x="80" y="63" font-family="'IBM Plex Sans Arabic', 'Cairo', sans-serif" font-size="11" font-weight="500" letter-spacing="0.08em" fill="#A3A3A3">متجر النخبة الفاخر • DZ</text>
+</svg>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم الإدارية | Zirox Store Algeria</title>
+    <meta name="description" content="لوحة تحكم إدارية شاملة ومؤمنة لإدارة منتجات، طلبيات، وإعدادات متجر Zirox Store الجزائر.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- SPA Application Mount Root -->
+    <div id="admin-app">
+        <noscript>
+            <div class="admin-auth-overlay">
+                <div class="admin-auth-card" style="text-align:center;">
+                    <h2>تنبيه: الجافاسكريبت معطل</h2>
+                    <p>يرجى تفعيل JavaScript في متصفحك لتتمكن من استخدام لوحة التحكم الإدارية.</p>
+                </div>
+            </div>
+        </noscript>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="admin-toast-container"></div>
+
+    <!-- Admin Master Controller: Pre-bundled script works everywhere (file:// protocol and http server) -->
+    <script src="admin.bundle.js"></script>
+
+    <!-- ES Module Fallback if bundle is missing -->
+    <script>
+        if (typeof window.adminToast !== 'function') {
+            const fallbackMod = document.createElement('script');
+            fallbackMod.type = 'module';
+            fallbackMod.src = 'admin.js';
+            document.body.appendChild(fallbackMod);
+        }
+    </script>
+
+</body>
+
+</html>

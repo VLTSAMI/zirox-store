@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب والدفع عند الاستلام | Zirox Store Algeria</title>
+    <meta name="description" content="أكمل طلبك بسهولة وأمان مع الدفع عند الاستلام بعد المعاينة المباشرة وتوصيل سريع لكافة الـ 69 ولاية جزائرية.">
+    <link rel="canonical" href="https://ziroxstore.dz/checkout.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="إتمام الطلب والدفع عند الاستلام | Zirox Store">
+    <meta property="og:description" content="شحن سريع لكافة الـ 69 ولاية مع الدفع عند الاستلام والمعاينة المسبقة.">
+    <meta property="og:image" content="assets/sony-wh1000xm5.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/zirox-logo.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <span class="top-bar-badge" data-i18n="stat_wilayas">69 Wilayas</span>
+        <span data-i18n="top_bar">توصيل سريع لكافة الـ 69 ولاية • معاينة وفحص الطرد قبل الدفع عند الاستلام • شحن مجاني للطلبات فوق 20 000 دج</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="content-wrapper nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Zirox Home">
+                <span class="logo-mark">
+                    <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#000000"/>
+                        <path d="M13 14H27L14 26H28" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="26.5" cy="14" r="2.2" fill="#FFFFFF"/>
+                    </svg>
+                </span>
+                <span class="logo-text-group">
+                    <span class="logo-name">ZIROX</span>
+                    <span class="logo-subtext" data-i18n="logo_sub">متجر النخبة الفاخر • DZ</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+                <a href="products.html" data-i18n="nav_catalog">الكتالوج</a>
+                <a href="about.html" data-i18n="nav_about">عن المتجر</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Select Language">
+                    <button class="lang-btn active" data-lang="ar">AR</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">🌙</button>
+
+                <button class="btn-black-pill open-cart-btn" aria-label="Open Cart">
+                    <span data-i18n="cart_btn">السلة</span>
+                    <span class="cart-badge" style="display: none;">0</span>
+                </button>
+
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Main Container -->
+    <main class="checkout-container">
+        <!-- Left: Customer Information Form -->
+        <div class="checkout-left">
+            <div class="checkout-section">
+                <h2 data-i18n="shipping_details">معلومات الشحن والتوصيل</h2>
+                <form id="checkout-form" novalidate>
+                    <!-- Full Name -->
+                    <div class="form-group" id="group-fullName">
+                        <div class="label-row">
+                            <label for="fullName">
+                                <span data-i18n="full_name">الاسم واللقب</span>
+                                <span class="required-star">*</span>
+                            </label>
+                            <span class="field-status-badge" id="name-status"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <input type="text" id="fullName" name="fullName" placeholder="مثال: كريم بن علي" required autocomplete="name">
+                        </div>
+                        <span class="error-msg" id="error-fullName" data-i18n="err_name">يرجى إدخال الاسم واللقب بوضوح (3 أحرف على الأقل).</span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group" id="group-phone">
+                        <div class="label-row">
+                            <label for="phone">
+                                <span data-i18n="phone_number">رقم الهاتف</span>
+                                <span class="required-star">*</span>
+                            </label>
+                            <span class="field-status-badge" id="phone-status"></span>
+                        </div>
+                        <div class="input-wrapper phone-wrapper">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <input type="tel" id="phone" name="phone" placeholder="05 / 06 / 07... (10 أرقام)" required autocomplete="tel">
+                        </div>
+                        <div class="input-hint" data-i18n="phone_hint">10 أرقام تبدأ بـ 05 أو 06 أو 07</div>
+                        <span class="error-msg" id="error-phone" data-i18n="err_phone">يرجى إدخال رقم هاتف جزائري صالح مكون من 10 أرقام (05، 06، أو 07).</span>
+                    </div>
+
+                    <!-- 69 Wilayas Selection -->
+                    <div class="form-group" id="group-state">
+                        <div class="label-row">
+                            <label for="state">
+                                <span data-i18n="wilaya">الولاية</span>
+                                <span class="required-star">*</span>
+                            </label>
+                            <span class="wilaya-count-badge">69 ولاية مغطاة</span>
+                        </div>
+                        <div class="input-wrapper select-wrapper">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <select id="state" name="state" required>
+                                <option value="" disabled selected data-i18n="select_wilaya">— اختر ولايتك من القائمة (69 ولاية) —</option>
+                                <option value="1">1 - Adrar (أدرار)</option>
+                                <option value="2">2 - Chlef (الشلف)</option>
+                                <option value="3">3 - Laghouat (الأغواط)</option>
+                                <option value="4">4 - Oum El Bouaghi (أم البواقي)</option>
+                                <option value="5">5 - Batna (باتنة)</option>
+                                <option value="6">6 - Béjaïa (بجاية)</option>
+                                <option value="7">7 - Biskra (بسكرة)</option>
+                                <option value="8">8 - Béchar (بشار)</option>
+                                <option value="9">9 - Blida (البليدة)</option>
+                                <option value="10">10 - Bouira (البويرة)</option>
+                                <option value="11">11 - Tamanrasset (تمنراست)</option>
+                                <option value="12">12 - Tébessa (تبسة)</option>
+                                <option value="13">13 - Tlemcen (تلمسان)</option>
+                                <option value="14">14 - Tiaret (تيارت)</option>
+                                <option value="15">15 - Tizi Ouzou (تيزي وزو)</option>
+                                <option value="16">16 - Algiers (الجزائر العاصمة)</option>
+                                <option value="17">17 - Djelfa (الجلفة)</option>
+                                <option value="18">18 - Jijel (جيجل)</option>
+                                <option value="19">19 - Sétif (سطيف)</option>
+                                <option value="20">20 - Saïda (سعيدة)</option>
+                                <option value="21">21 - Skikda (سكيكدة)</option>
+                                <option value="22">22 - Sidi Bel Abbès (سيدي بلعباس)</option>
+                                <option value="23">23 - Annaba (عنابة)</option>
+                                <option value="24">24 - Guelma (قالمة)</option>
+                                <option value="25">25 - Constantine (قسنطينة)</option>
+                                <option value="26">26 - Médéa (المدية)</option>
+                                <option value="27">27 - Mostaganem (مستغانم)</option>
+                                <option value="28">28 - M'Sila (المسيلة)</option>
+                                <option value="29">29 - Mascara (معسكر)</option>
+                                <option value="30">30 - Ouargla (ورقلة)</option>
+                                <option value="31">31 - Oran (وهران)</option>
+                                <option value="32">32 - El Bayadh (البيض)</option>
+                                <option value="33">33 - Illizi (إليزي)</option>
+                                <option value="34">34 - Bordj Bou Arréridj (برج بوعريريج)</option>
+                                <option value="35">35 - Boumerdès (بومرداس)</option>
+                                <option value="36">36 - El Tarf (الطارف)</option>
+                                <option value="37">37 - Tindouf (تندوف)</option>
+                                <option value="38">38 - Tissemsilt (تسمسيلت)</option>
+                                <option value="39">39 - El Oued (الوادي)</option>
+                                <option value="40">40 - Khenchela (خنشلة)</option>
+                                <option value="41">41 - Souk Ahras (سوق أهراس)</option>
+                                <option value="42">42 - Tipaza (تيبازة)</option>
+                                <option value="43">43 - Mila (ميلة)</option>
+                                <option value="44">44 - Aïn Defla (عين الدفلى)</option>
+                                <option value="45">45 - Naâma (النعامة)</option>
+                                <option value="46">46 - Aïn Témouchent (عين تموشنت)</option>
+                                <option value="47">47 - Ghardaïa (غرداية)</option>
+                                <option value="48">48 - Relizane (غليزان)</option>
+                                <option value="49">49 - Timimoun (تيميمون)</option>
+                                <option value="50">50 - Bordj Badji Mokhtar (برج باجي مختار)</option>
+                                <option value="51">51 - Ouled Djellal (أولاد جلال)</option>
+                                <option value="52">52 - Béni Abbès (بني عباس)</option>
+                                <option value="53">53 - In Salah (عين صالح)</option>
+                                <option value="54">54 - In Guezzam (عين قزام)</option>
+                                <option value="55">55 - Touggourt (تقرت)</option>
+                                <option value="56">56 - Djanet (جانت)</option>
+                                <option value="57">57 - El M'Ghair (المغير)</option>
+                                <option value="58">58 - El Meniaa (المنيعة)</option>
+                                <option value="59">59 - Aflou (أفلو)</option>
+                                <option value="60">60 - Barika (بريكة)</option>
+                                <option value="61">61 - El Kantara (القنطرة)</option>
+                                <option value="62">62 - Bir El Ater (بئر العاتر)</option>
+                                <option value="63">63 - El Aricha (العريشة)</option>
+                                <option value="64">64 - Ksar Chellala (قصر الشلالة)</option>
+                                <option value="65">65 - Ain Oussera (عين وسارة)</option>
+                                <option value="66">66 - Messaad (مسعد)</option>
+                                <option value="67">67 - Ksar El Boukhari (قصر البخاري)</option>
+                                <option value="68">68 - Bou-Saada (بوسعادة)</option>
+                                <option value="69">69 - El Abiodh Sidi Cheikh (الأبيض سيدي الشيخ)</option>
+                            </select>
+                        </div>
+                        <div id="wilaya-delivery-estimate" class="delivery-estimate-badge">
+                            <span data-i18n="delivery_estimate_fast">⚡ شحن سريع: يصلك خلال <strong>24 إلى 48 ساعة</strong> مع ياليدين إكسبريس</span>
+                        </div>
+                        <span class="error-msg" id="error-state" data-i18n="err_state">يرجى اختيار الولاية من القائمة لتحديد كلفة الشحن.</span>
+                    </div>
+
+                    <!-- Detailed Address -->
+                    <div class="form-group" id="group-address">
+                        <div class="label-row">
+                            <label for="address">
+                                <span data-i18n="address">العنوان الكامل (البلدية والشارع)</span>
+                                <span class="required-star">*</span>
+                            </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea id="address" name="address" rows="3" placeholder="البلدية، الحي، رقم العمارة أو الشارع..." required></textarea>
+                        </div>
+                        <div class="input-hint" data-i18n="address_hint">البلدية والحي أو الشارع لتسهيل وصول المندوب</div>
+                        <span class="error-msg" id="error-address" data-i18n="err_address">يرجى إدخال عنوان دقيق (البلدية والشارع).</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right: Order Summary & Confirmation -->
+        <div class="checkout-right">
+            <div class="summary-section">
+                <div class="summary-header">
+                    <h2 data-i18n="order_summary">ملخص الطلبية</h2>
+                    <span class="secure-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        دفع آمن 100%
+                    </span>
+                </div>
+
+                <div class="checkout-items-preview">
+                    <!-- Dynamic mini items rendered via script.js -->
+                </div>
+
+                <!-- Modern Interactive Delivery Mode Selection Cards -->
+                <div class="shipping-methods">
+                    <label class="delivery-section-title" data-i18n="delivery_mode">طريقة الاستلام والتوصيل</label>
+                    
+                    <div class="delivery-cards-grid">
+                        <!-- Option 1: Office Pickup (Stop Desk) -->
+                        <label class="delivery-card active" for="ship-office" id="label-ship-office">
+                            <input type="radio" id="ship-office" name="shipping" value="office" checked>
+                            <div class="delivery-card-content">
+                                <div class="delivery-card-radio-circle">
+                                    <div class="radio-dot"></div>
+                                </div>
+                                <div class="delivery-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 3l3-2 3 2v4H9V3z"/>
+                                    </svg>
+                                </div>
+                                <div class="delivery-card-text">
+                                    <div class="delivery-card-title" data-i18n="office_pickup_title">📦 استلام من مكتب ياليدين (Stop Desk)</div>
+                                    <div class="delivery-card-desc" data-i18n="office_pickup_desc">استلام مرن من أقرب مكتب في بلديتك في الوقت الذي يناسبك</div>
+                                </div>
+                                <div class="delivery-card-badge" id="desk-price-badge">-- DA</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 2: Home Delivery -->
+                        <label class="delivery-card" for="ship-home" id="label-ship-home">
+                            <input type="radio" id="ship-home" name="shipping" value="home">
+                            <div class="delivery-card-content">
+                                <div class="delivery-card-radio-circle">
+                                    <div class="radio-dot"></div>
+                                </div>
+                                <div class="delivery-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                        <polyline points="9 22 9 12 15 12 15 22"/>
+                                    </svg>
+                                </div>
+                                <div class="delivery-card-text">
+                                    <div class="delivery-card-title" data-i18n="home_delivery_title">🏠 توصيل لباب المنزل</div>
+                                    <div class="delivery-card-desc" data-i18n="home_delivery_desc">تسليم شخصي مباشر وسريع حتى عتبة بابك</div>
+                                </div>
+                                <div class="delivery-card-badge" id="home-price-badge">-- DA</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Cost Summary -->
+                <div class="cost-summary">
+                    <div class="cost-row">
+                        <span data-i18n="items_subtotal">مجموع المنتجات:</span>
+                        <span id="checkout-subtotal" style="font-family:var(--font-mono);font-weight:700;">0 DA</span>
+                    </div>
+                    <div class="cost-row">
+                        <span data-i18n="shipping_fee">رسوم الشحن والتوصيل:</span>
+                        <span id="shipping-cost" style="font-family:var(--font-mono);font-weight:700;">-- DA</span>
+                    </div>
+                    <div class="cost-row total-row">
+                        <span data-i18n="cart_total">المجموع الإجمالي للدفع:</span>
+                        <span id="total-cost">0 DA</span>
+                    </div>
+                </div>
+
+                <!-- High-Impact Sovereign Trust Shield (Decreases Buyer Friction) -->
+                <div class="checkout-trust-shield">
+                    <div class="trust-shield-item">
+                        <div class="trust-shield-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <polyline points="11 8 11 12 14 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="trust-shield-info">
+                            <h4 data-i18n="trust_inspect_title">حق المعاينة والتجربة قبل الدفع</h4>
+                            <p data-i18n="trust_inspect_desc">افتح الطرد وافحص جهازك وتأكد من محتواه أمام الموزع قبل تسليم أي دينار.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-shield-item">
+                        <div class="trust-shield-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="trust-shield-info">
+                            <h4 data-i18n="trust_cod_title">دفع نقدي آمن عند الاستلام 100%</h4>
+                            <p data-i18n="trust_cod_desc">تسوق براحة بال، لا دفع إلكتروني مسبق ولا أي مخاطرة. عاين أولاً وادفع لاحقاً.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-shield-item">
+                        <div class="trust-shield-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </div>
+                        <div class="trust-shield-info">
+                            <h4 data-i18n="trust_warranty_title">ضمان استبدال رسمي 7 أيام</h4>
+                            <p data-i18n="trust_warranty_desc">استبدال فوري ومجاني ومباشر في حال وجود أي عيب مصنعي.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit / Confirm Button -->
+                <button type="submit" form="checkout-form" id="confirmBtn" class="submit-btn">
+                    <span data-i18n="confirm_whatsapp">تأكيد الطلب عبر الواتساب</span>
+                    <span class="arrow-circle">←</span>
+                </button>
+
+                <p class="instant-confirm-note" data-i18n="instant_note">
+                    سيتم فتح محادثة WhatsApp مباشرة مع فريقنا لتأكيد شحنتك فوراً.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Luxury Dark Footer -->
+    <footer class="main-footer">
+        <div class="content-wrapper">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand-logo" aria-label="Zirox Store">
+                        <span class="logo-mark">
+                            <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="20" fill="#FFFFFF"/>
+                                <path d="M13 14H27L14 26H28" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="26.5" cy="14" r="2.2" fill="#000000"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text-group">
+                            <span class="logo-name" style="color:#FFFFFF;">ZIROX</span>
+                            <span class="logo-subtext" style="color:rgba(255,255,255,0.6);" data-i18n="logo_sub">متجر النخبة الفاخر • DZ</span>
+                        </span>
+                    </a>
+                    <p class="footer-desc" data-i18n="footer_desc">
+                        المنصة الجزائرية الأولى لتجارة التجزئة الفاخرة للأجهزة الأصلية 100% مع الدفع عند الاستلام والتوصيل لكافة الـ 69 ولاية.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_network">روابط المنصة</h4>
+                    <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+                    <a href="products.html" data-i18n="nav_catalog">الكتالوج الكامل</a>
+                    <a href="about.html" data-i18n="nav_about">عن المتجر</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_care">خدمة النخبة والكونسيرج</h4>
+                    <p data-i18n="footer_contact_city">📍 الجزائر العاصمة، الجزائر</p>
+                    <p data-i18n="footer_contact_phone">📞 هاتف: 0676 18 48 05</p>
+                    <p data-i18n="footer_contact_email">✉️ بريد: contact@ziroxstore.dz</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_assurance">الضمان والسيادة</h4>
+                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;line-height:1.6;" data-i18n="footer_inspect_note">
+                        ✓ معاينة واختبار فوري قبل دفع أي دينار.
+                    </p>
+                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;line-height:1.6;" data-i18n="footer_replace_note">
+                        ✓ ضمان استبدال رسمي في حال وجود أي عيب مصنعي.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">© 2026 Zirox Store. All rights reserved.</p>
+                <p data-i18n="footer_coverage">تغطية لكافة الـ 69 ولاية • ياليدين إكسبريس • الدفع عند الاستلام</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <h3 data-i18n="cart_title">سلة المشتريات</h3>
+            <button class="close-cart-btn" id="close-cart" aria-label="Close Cart">&times;</button>
+        </div>
+        <div class="free-shipping-bar" id="free-shipping-bar" style="margin: 1rem 1.5rem 0;"></div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span data-i18n="cart_total">المجموع النهائي:</span>
+                <span id="cart-total" class="cart-total-val">0 DA</span>
+            </div>
+            <a href="checkout.html" class="btn-pill" style="width:100%;text-align:center;" data-i18n="cart_checkout">
+                <span>إتمام الطلب الآن (الدفع عند الاستلام)</span>
+                <span class="arrow-circle">←</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Core App Logic: Pre-bundled for file:// and server support with module fallback -->
+    <script src="script.bundle.js"></script>
+    <script>
+        if (typeof window.t !== 'function' || typeof window.setLanguage !== 'function') {
+            const fb = document.createElement('script');
+            fb.type = 'module';
+            fb.src = 'script.js';
+            document.body.appendChild(fb);
+        }
+    </script>
+</body>
+
+</html>
